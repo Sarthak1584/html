@@ -3,30 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stop and Resume Button</title>
+  <title>Animated Button</title>
+  <style>
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      animation: pulse 1s infinite alternate; /* Animation */
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.1);
+      }
+    }
+  </style>
 </head>
 <body>
 
-<button id="stopButton" onclick="stopFunction()">Stop</button>
-<button id="resumeButton" onclick="resumeFunction()">Resume</button>
-
-<p id="demo">Count: </p>
-
-<script>
-  var count = 0;
-  var interval;
-
-  function stopFunction() {
-    clearInterval(interval);
-  }
-
-  function resumeFunction() {
-    interval = setInterval(function() {
-      count++;
-      document.getElementById("demo").innerHTML = "Count: " + count;
-    }, 1000);
-  }
-</script>
+<button class="btn">Click Me</button>
 
 </body>
 </html>
