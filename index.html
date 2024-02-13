@@ -1,1 +1,32 @@
-heloo world....!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop and Resume Button</title>
+</head>
+<body>
+
+<button id="stopButton" onclick="stopFunction()">Stop</button>
+<button id="resumeButton" onclick="resumeFunction()">Resume</button>
+
+<p id="demo">Count: </p>
+
+<script>
+  var count = 0;
+  var interval;
+
+  function stopFunction() {
+    clearInterval(interval);
+  }
+
+  function resumeFunction() {
+    interval = setInterval(function() {
+      count++;
+      document.getElementById("demo").innerHTML = "Count: " + count;
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>
